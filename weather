@@ -1,0 +1,4 @@
+#! /bin/bash
+curl wttr.in/29.744350,-82.493110?1F
+# 1= todays weather and current
+# F = Don't show "follow me"
