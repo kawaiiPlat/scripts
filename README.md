@@ -1,1 +1,1 @@
-# scripts, some for WSL2 on windows
+# Scripts, some for WSL2 on windows
