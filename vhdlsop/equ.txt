@@ -1,3 +1,0 @@
-   (     Q3 AND     Q2 AND     Q1 AND     Q0 )
-OR ( NOT Q3 AND NOT Q2 AND NOT Q1 AND NOT Q0 )
-OR ( NOT Q3 AND NOT Q2 AND     Q1 AND     Q0 )
