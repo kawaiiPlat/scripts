@@ -133,6 +133,7 @@ lib32-vulkan-intel
 lib32-vulkan-radeon
 libappindicator-gtk3
 libdvdcss
+libreoffice-fresh
 libva-mesa-driver
 libva-vdpau-driver
 licenses
@@ -176,6 +177,7 @@ mkinitcpio-openswap
 mobile-broadband-provider-info
 modemmanager
 mousetweaks
+mpv
 mutter
 nano
 nautilus
@@ -197,6 +199,7 @@ nss-mdns
 ntfs-3g
 ntp
 numlockx
+obs-studio
 openresolv
 openssh
 os-prober
@@ -288,3 +291,4 @@ xorg-twm
 xorg-xinit
 xz
 yelp
+zoom
