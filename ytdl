@@ -1,0 +1,14 @@
+vidDir=~/Videos/YTDL.d
+
+if [ "$1" = "play" ]; then
+	echo playing
+	vidChoice=$(ls $vidDir | dmenu)
+	#mpv $vidDir/$vidChoice
+	mpv $vidDir/$vidChoice
+	exit
+else
+	echo "What URL do you want to download?"
+	read vidURL
+	cd $vidDir
+	youtube-dl --restrict-filenames --output '%(title)s-%(id)s.%(ext)s' $vidURL
+fi
