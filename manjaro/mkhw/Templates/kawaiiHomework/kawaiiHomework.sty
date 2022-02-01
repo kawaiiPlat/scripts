@@ -1,0 +1,71 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kawaiiHomework}[kawaiiPlat's generic homework]
+
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+
+% based on https://github.com/jdavis/latex-homework-template/blob/master/homework.tex
+
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.5}
+
+
+
+\pagestyle{fancy}
+\fancyhf{} %clear the header and footer
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ : \hmwkTitle}
+\rhead{\thepage}
+
+
+
+%lhead{\hmwkAuthorName}
+%chead{\hmwkClass\ (\hmwkClassInstructor\ \hmwkClassTime): \hmwkTitle}
+%rhead{\firstxmark}
+%lfoot{\lastxmark}
+%cfoot{\thepage}
+
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0pt} % no footer line
+
+\setlength\parindent{0pt}
+
+%
+% Makes sections not show numbers even when the are numbered sections
+%
+\titleformat{\section}
+  {\normalfont\Large\bfseries}   % The style of the section title
+  {}                             % a prefix
+  {0pt}                          % How much space exists between the prefix and the title
+  {}    % How the section is represented
+
+% Starred variant
+\titleformat{name=\section,numberless}
+  {\normalfont\Large\bfseries}
+  {}
+  {0pt}
+  {}
+
+
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate\ at \hmwkDueTime}\\
+    \vspace{0.1in}\large{\textit{\hmwkClassInstructor,\ \hmwkClassTime}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName}
