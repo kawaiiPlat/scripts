@@ -1,10 +1,21 @@
-printHelp() {
+
+
+printHelp(){
 	echo "Useage: ./mkHW.sh [CLASS] [HW NAME]"
 }
 
 # main function
 if [ $# -eq 2 ]
 then
+	# https://stackoverflow.com/a/246128
+	SOURCE=${BASH_SOURCE[0]}
+	while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+		DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+		SOURCE=$(readlink "$SOURCE")
+		[[ $SOURCE != /* ]] && SOURCE=$DIR/$SOURCE # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+	done
+	SCRIPT_DIR=$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )
+
 	#checkClass $1
 
 	dir=$PWD/$1
@@ -12,7 +23,7 @@ then
 	then
 		echo "$dir already exist, adding HW..."
 	else
-		echo "$dir doesn't already exist, yeet creating..."
+		echo "$dir doesn't already exist, ..."
 		mkdir $dir
 		mkdir "$dir/.config"
 
@@ -26,7 +37,7 @@ then
 	fi;
 
 	#checkHW $1 $2
-	file=$PWD/$1/$2.tex
+	file=$PWD/$1/$2/$2.tex
 	if [ -f $file ]
 	then
 		echo "$file already exists, stopping..."
@@ -39,8 +50,8 @@ then
 	dir=$PWD/$1/$2
 	hwfile=$dir/$2.tex
 	styfile=$dir/kawaiiHomework.sty
-	style=$PWD/Templates/kawaiiHomework/kawaiiHomework.sty
-	template=$PWD/Templates/kawaiiHomework/homework.tex
+	style=$SCRIPT_DIR/Templates/kawaiiHomework/kawaiiHomework.sty
+	template=$SCRIPT_DIR/Templates/kawaiiHomework/homework.tex
 
 	echo "Making the directory $dir..."
 	mkdir $dir
