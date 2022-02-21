@@ -54,6 +54,21 @@
   {0pt}
   {}
 
+%
+% Makes subsections not show numbers even when the are numbered sections
+%
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}   % The style of the section title
+  {}                             % a prefix
+  {0pt}                          % How much space exists between the prefix and the title
+  {}    % How the section is represented
+
+% Starred variant
+\titleformat{name=\subsection,numberless}
+  {\normalfont\large\bfseries}
+  {}
+  {0pt}
+  {}
 
 
 %
