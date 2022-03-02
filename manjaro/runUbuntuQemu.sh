@@ -44,12 +44,15 @@ if [ ! -f "$disk_img_snapshot" ]; then
 fi
 
 # Run the installed image.
+# The net commands forward the host's port 10022 to the VM's port 22 for ssh
 qemu-system-x86_64 \
   -drive "file=${disk_img_snapshot},format=qcow2" \
   -enable-kvm \
   -m 8G \
   -smp 2 \
-  -soundhw hda \
+  -device intel-hda \
+  -net nic \
+  -net user,hostfwd=tcp::10022-:22 \
   -vga virtio \
   "$@" \
 ;
