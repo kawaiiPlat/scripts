@@ -49,10 +49,10 @@ qemu-system-x86_64 \
   -drive "file=${disk_img_snapshot},format=qcow2" \
   -enable-kvm \
   -m 8G \
-  -smp 2 \
+  -smp 4 \
   -device intel-hda \
   -net nic \
   -net user,hostfwd=tcp::10022-:22 \
-  -vga virtio \
+  -vga qxl \
   "$@" \
 ;
